@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="user-container">
+            <img
+                :src="picture + '?t=' + Date.now()"
+                :alt="`${firstName} ${lastName}`"
+                :class="gender"
+            />
+            <h1>{{firstName}} {{lastName}}</h1>
+            <h3>Email: {{email}}</h3>
+            <h3>Phone: {{phone}}</h3>
+            <h3>Birthday: {{birthday}}</h3>
+            <h3>Address: {{address}}</h3>
+            <button :class="[gender, 'copy-button']" @click="copyUser">Copy User</button>
+            <button :class="[gender, 'generate-button']" @click="getUser">Get Random User</button>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="App.js"></script>
+</body>
+</html>
